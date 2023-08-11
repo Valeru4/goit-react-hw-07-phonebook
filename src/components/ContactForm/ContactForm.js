@@ -20,6 +20,7 @@ export const ContactForm = () => {
       return;
     }
     const contact = {
+      id: contactId,
       name: name,
       number: number,
     };
