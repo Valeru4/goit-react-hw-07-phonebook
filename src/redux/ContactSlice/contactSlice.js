@@ -6,11 +6,10 @@ import {
 } from 'redux/operations';
 
 const initialState = {
-  contacts: {
-    items: [],
-    isLoading: false,
-    error: null,
-  },
+  items: [],
+  isLoading: false,
+  error: null,
+
   filter: '',
 };
 

@@ -13,8 +13,9 @@ export const List = styled.ul`
 
 export const Item = styled.li`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  gap: 15px;
 `;
 
 export const Text = styled.p`
