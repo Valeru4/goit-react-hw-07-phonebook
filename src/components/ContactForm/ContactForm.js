@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Form, Label, Input, Button } from './ContactForm.styled';
 import { useState } from 'react';
-import { nanoid } from '@reduxjs/toolkit';
+// import { nanoid } from '@reduxjs/toolkit';
 import { ContactSelector } from 'redux/ContactSlice/selectors';
 import { addContacts } from 'redux/operations';
 
@@ -12,15 +12,12 @@ export const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  const contactId = nanoid();
-
   const handlerAddContacts = () => {
     if (name === '' || number === '') {
       alert('Enter data');
       return;
     }
     const contact = {
-      id: contactId,
       name: name,
       number: number,
     };
@@ -37,7 +34,7 @@ export const ContactForm = () => {
       return alert(`${number} is already in contacts`);
     }
 
-    console.log(contact);
+    // console.log(contact);
     dispatch(addContacts(contact));
     resetForm();
   };
@@ -69,7 +66,7 @@ export const ContactForm = () => {
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           required
         />
-        <Button onClick={() => handlerAddContacts(contactId)} type="submit">
+        <Button onClick={() => handlerAddContacts()} type="submit">
           Add contact
         </Button>
       </Form>
